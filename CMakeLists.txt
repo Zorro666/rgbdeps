@@ -47,6 +47,8 @@ IF(NESTK_USE_EMBEDDED_GLEW)
   ADD_SUBDIRECTORY("${nestk_deps_SOURCE_DIR}/glew")
 ENDIF()
 
+set(LZ4_LIBRARIES "lz4" CACHE FILEPATH "" FORCE)
+
 ## FREENECT and OPENNI deps
 IF(NESTK_USE_FREENECT AND NESTK_USE_EMBEDDED_FREENECT)
   ## LIBUSB
@@ -127,3 +129,5 @@ ENDIF(NOT NESTK_USE_ROS)
 # cmake scripts
 ################################################################################
 ADD_SUBDIRECTORY(cmake)
+
+ADD_SUBDIRECTORY(lz4)
